@@ -1,5 +1,5 @@
 from django import forms
-from .models import Applications
+from .models import Applications, Comment
 
 
 class EmailPostForm(forms.Form):
@@ -14,3 +14,8 @@ class ApplicationsForm(forms.ModelForm):
         model = Applications
         fields = ['mail', 'name', 'comment', 'subject']
 
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name', 'email', 'body')
